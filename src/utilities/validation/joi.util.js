@@ -42,6 +42,17 @@ class JoiValidation {
 
     this.checkValidation(schema, body);
   }
+
+  createCategorysValidation(body) {
+    // Define validation schema for user registration.
+    const schema = {
+      name: Joi.string().required(),
+      slug: Joi.string().required(),
+      icon: Joi.string(),
+    };
+
+    this.checkValidation(schema, body);
+  }
 }
 
 module.exports = new JoiValidation();

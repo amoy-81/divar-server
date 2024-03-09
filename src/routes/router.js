@@ -6,6 +6,7 @@ router.get("/", (req, res) => {
 });
 
 router.use("/auth", require("./auth.routes"));
+router.use("/categorys", require("./categorys.routes"));
 
 // if route not found
 router.use("*", (req, res, next) => {

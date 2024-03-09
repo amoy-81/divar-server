@@ -12,6 +12,13 @@ class UsersModel {
     return user;
   }
 
+  async getUserById(id) {
+    const [user] = await db.query("SELECT * FROM users WHERE id = ?", [
+      id,
+    ]);
+    return user;
+  }
+
   async createNewUser(name, mobile) {
     const [user] = await db.query(
       "INSERT INTO users (name , mobile) VALUE (?, ?)",
