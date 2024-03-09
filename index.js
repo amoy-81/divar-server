@@ -13,7 +13,7 @@ app.use(express.json());
 app.set("view engine", "ejs");
 
 // include routes
-app.use("/", require("./routes/router"));
+app.use("/", require("./src/routes/router"));
 
 app.listen(process.env.PORT, () => {
   console.log(`app listen on port ${process.env.PORT}`);
