@@ -7,7 +7,37 @@ class PostsModel {
   }
 
   async getPosts() {
-    const [posts] = await db.query("SELECT * FROM posts");
+    const [posts] = await db.query(`
+      SELECT p.id, u.name as user_name, c.name as category ,p.title, p.price, p.image, p.address, p.created_at
+      FROM posts p
+      JOIN (users u, categorys c) 
+        ON u.id = p.user_id AND c.id = p.category_id;`);
+    return posts;
+  }
+
+  async getOnePostById(id) {
+    const [posts] = await db.query(
+      `
+      SELECT p.id, p.user_id ,u.name as user_name, c.name as category ,p.title, p.description, p.price, p.image, p.address, p.created_at
+      FROM posts p
+      JOIN (users u, categorys c) 
+        ON u.id = p.user_id AND c.id = p.category_id
+      WHERE p.id = ?;`,
+      [id]
+    );
+    return posts;
+  }
+
+  async getUserPostsById(id) {
+    const [posts] = await db.query(
+      `
+      SELECT p.*, c.name as category
+      FROM posts p
+      JOIN (categorys c) 
+        ON c.id = p.category_id
+      WHERE p.user_id = ?;`,
+      [id]
+    );
     return posts;
   }
 

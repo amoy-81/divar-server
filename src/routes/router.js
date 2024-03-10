@@ -1,13 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.json({ message: "Hello World" });
-});
-
 router.use("/auth", require("./auth.routes"));
 router.use("/categorys", require("./categorys.routes"));
 router.use("/posts", require("./posts.routes"));
+router.use("/orders", require("./orders.routes"));
 
 // if route not found
 router.use("*", (req, res, next) => {

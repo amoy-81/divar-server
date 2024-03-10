@@ -1,6 +1,5 @@
 const autoBind = require("auto-bind");
 const Joi = require("joi");
-const { join } = require("lodash");
 
 class JoiValidation {
   constructor() {
@@ -63,6 +62,25 @@ class JoiValidation {
       description: Joi.string().required(),
       price: Joi.number().required(),
       address: Joi.string().required(),
+    };
+    this.checkValidation(schema, body);
+  }
+
+  createOrderValidation(body) {
+    // Define validation schema for user registration.
+    const schema = {
+      post_id: Joi.number().required(),
+      proposed_price: Joi.number().required(),
+      message: Joi.string().required(),
+    };
+    this.checkValidation(schema, body);
+  }
+
+  checkOrderValidation(body) {
+    // Define validation schema for user registration.
+    const schema = {
+      order_id: Joi.number().required(),
+      action: Joi.string().valid("accept", "reject").required(),
     };
     this.checkValidation(schema, body);
   }
