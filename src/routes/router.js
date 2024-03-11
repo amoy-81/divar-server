@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
+router.use('/', require("./pages.routes"))
 router.use("/auth", require("./auth.routes"));
 router.use("/categorys", require("./categorys.routes"));
 router.use("/posts", require("./posts.routes"));

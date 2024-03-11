@@ -1,0 +1,47 @@
+<%- include('partials/head.ejs') %>
+<div class="relative" id="home" dir="rtl">
+  <div
+    aria-hidden="true"
+    class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40"
+  >
+    <div
+      class="blur-[106px] h-56 bg-gradient-to-br from-red-500 to-purple-400"
+    ></div>
+    <div
+      class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300"
+    ></div>
+  </div>
+  <div class="relative pt-36 ml-auto">
+    <div class="lg:w-2/3 text-center mx-auto">
+      <h1 class="text-gray-900 font-bold text-5xl md:text-6xl xl:text-7xl">
+        شبیه سازی API سایت
+        <span class="text-red-500">دیوار</span>
+      </h1>
+      <p class="mt-8 text-gray-700 -300">
+        در این پروژه سعی کردم api بخشی از امکانات وبسایت دیوار را شبیه سازی کنم.
+      </p>
+
+      <div class="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6">
+        <a
+          href="https://www.postman.com/warped-robot-870771/workspace/alim/collection/28071639-04a53ba2-d986-435d-a136-692c2f659753?action=share&creator=28071639"
+          class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-red-500 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+        >
+          <span class="relative text-base font-semibold text-white"
+            >Postman</span
+          >
+        </a>
+        <a
+          href="https://github.com/alim1381/divar-server"
+          class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-red-500/10 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 -gray-700 -gray-800 sm:w-max"
+        >
+          <span class="relative text-base font-semibold text-red-500"
+            >Go To GitHub</span
+          >
+        </a>
+      </div>
+      <%- include('partials/features.ejs' , {features : [features[0], features[1], features[2],]}) %>
+      <%- include('partials/features.ejs' , {features : [features[3], features[4], features[5],]}) %>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer.ejs') %>

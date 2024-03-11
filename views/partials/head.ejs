@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anta&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Vazirmatn:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      #toggle_nav:checked ~ div #hamburger #line {
+        @apply rotate-45 translate-y-1.5;
+      }
+
+      #toggle_nav:checked ~ div #hamburger #line2 {
+        @apply -rotate-45 -translate-y-1;
+      }
+
+      body {
+        font-family: "Vazirmatn", sans-serif;
+      }
+    </style>
+    <title>Divar Simulation</title>
+  </head>
+  <body>
+    <header>
+      <nav class="z-10 w-full absolute" dir="rtl">
+        <div
+          class="flex flex-wrap items-center justify-between py-2 px-5 gap-6 md:py-4 md:gap-0 relative"
+        >
+          <div
+            class="relative z-20 w-full flex justify-between lg:w-max md:px-0"
+          >
+            <a
+              href="#home"
+              aria-label="logo"
+              class="flex space-x-2 items-center"
+            >
+              <span class="text-2xl font-bold text-red-500">
+                دیوار
+                <span class="text-gray-500 font-medium text-base"
+                  >شبیه سازی</span
+                >
+              </span>
+            </a>
+          </div>
+          <div
+            aria-hidden="true"
+            class="fixed z-10 inset-0 h-screen w-screen bg-white/70 backdrop-blur-2xl origin-bottom scale-y-0 transition duration-500 peer-checked:origin-top peer-checked:scale-y-100 lg:hidden -900/70"
+          ></div>
+          <!-- <div
+            class="flex-col z-20 flex-wrap gap-6 p-8 rounded-3xl border border-gray-100 bg-white shadow-2xl shadow-gray-600/10 justify-end w-full invisible opacity-0 translate-y-1 absolute top-full left-0 transition-all duration-300 scale-95 origin-top lg:relative lg:scale-100 lg:peer-checked:translate-y-0 lg:translate-y-0 lg:flex lg:flex-row lg:items-center lg:gap-0 lg:p-0 lg:bg-transparent lg:w-7/12 lg:visible lg:opacity-100 lg:border-none peer-checked:scale-100 peer-checked:opacity-100 peer-checked:visible lg:shadow-none -800 -700"
+          >
+            <div class="text-gray-600 lg:pr-4 lg:w-auto w-full lg:pt-0">
+              <ul
+                class="tracking-wide font-medium lg:text-sm flex-col flex lg:flex-row gap-6 lg:gap-0"
+              >
+                <li>
+                  <a
+                    href="#features"
+                    class="block md:px-4 transition hover:text-primary"
+                  >
+                    <span>وارد شوید</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div> -->
+        </div>
+      </nav>
+    </header>
+  </body>
+</html>
