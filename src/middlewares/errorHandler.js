@@ -5,7 +5,7 @@ function errorHandler(err, req, res, next) {
 
   res.status(status ? status : 500).json({
     message: message,
-    // stack: stack,
+    stack: stack,
   });
 }
 
