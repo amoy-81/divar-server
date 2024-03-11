@@ -5,6 +5,7 @@ router.use("/auth", require("./auth.routes"));
 router.use("/categorys", require("./categorys.routes"));
 router.use("/posts", require("./posts.routes"));
 router.use("/orders", require("./orders.routes"));
+router.use("/comments", require("./comment.routes"));
 
 // if route not found
 router.use("*", (req, res, next) => {

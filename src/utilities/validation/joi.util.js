@@ -84,6 +84,15 @@ class JoiValidation {
     };
     this.checkValidation(schema, body);
   }
+
+  createNewComment(body) {
+    // Define validation schema for user registration.
+    const schema = {
+      post_id: Joi.number().required(),
+      message: Joi.string().required(),
+    };
+    this.checkValidation(schema, body);
+  }
 }
 
 module.exports = new JoiValidation();
