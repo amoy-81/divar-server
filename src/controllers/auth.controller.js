@@ -128,6 +128,17 @@ class AuthController {
     // Return User object OTP information
     return UserWithNewOTP;
   }
+
+  async whoAmI(req, res, next) {
+    try {
+      const [user] = await usersModel.getUserById(req.user.id);
+      if (!user) throw new createHttpError.Unauthorized("وارد شوید");
+
+      return res.status(200).json(_.omit(user, ["otp_code", "otp_expires_in"]));
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 module.exports = new AuthController();
