@@ -11,6 +11,11 @@ class CategorysModel {
     return categorys;
   }
 
+  async getPostsByCategory(slug) {
+    const [categorys] = await db.query("SELECT * FROM categorys WHERE slug = ?" , [slug]);
+    return categorys;
+  }
+
   async createCategory(name, slug, icon) {
     const [result] = await db.query(
       `INSERT INTO categorys (name,slug,icon) VALUES(?,?,?)`,

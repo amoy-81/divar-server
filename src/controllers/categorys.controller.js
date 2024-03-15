@@ -22,6 +22,15 @@ class CategorysController {
     }
   }
 
+  async getPostsByCategory(req, res, next) {
+    try {
+      const posts = await categorysModel.getPostsByCategory(req.params.slug);
+      return res.status(200).json(posts);
+    } catch (error) {
+      next(error);
+    }
+  }
+
   async createCategorys(req, res, next) {
     try {
       if (req.user.role !== "ADMIN")
