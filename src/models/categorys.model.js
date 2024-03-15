@@ -12,7 +12,7 @@ class CategorysModel {
   }
 
   async getPostsByCategory(slug) {
-    const [categorys] = await db.query("SELECT * FROM posts WHERE slug = ?" , [slug]);
+    const [categorys] = await db.query("SELECT * FROM posts WHERE category_id IN (SELECT id FROM categorys WHERE slug = ?)" , [slug]);
     return categorys;
   }
 
