@@ -22,7 +22,7 @@ class OrdersController {
 
       const IsSoldOrder = await ordersModel.IsSoldOrder(req.body.post_id);
 
-      if (IsSoldOrder)
+      if (IsSoldOrder.length > 0)
         throw new createHttpError[400]("این محصول به فروش رسیده است");
 
       const newOrderData = { ...req.body, user_id: req.user.id };

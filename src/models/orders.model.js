@@ -159,7 +159,7 @@ class OrdersModel {
       `
         SELECT * 
         FROM orders
-        WHERE post_id = ? AND order_state = "sold"
+        WHERE post_id = ? AND order_state = 'sold'
       `,
       [postId]
     );
